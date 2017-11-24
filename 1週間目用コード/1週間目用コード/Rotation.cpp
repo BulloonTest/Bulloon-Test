@@ -1,3 +1,5 @@
+/*‰ñ“]‚Ìˆ—‚ğ‚±‚±‚Å‘‚­*/
+
 #include<Windows.h>
 #include<stdio.h>
 #include"Main.h"

@@ -1,3 +1,5 @@
+/*　画像の設定：作成：貼り付けを行っています　*/
+
 #include<Windows.h>
 #include<d3dx9.h>
 #include"main.h"
@@ -46,4 +48,9 @@ void Loadtexture()
 	CreateTexture("蜂2.png", HORNET_TEX);
 	CreateTexture("雷雲2.png", CLOUD_TEX);
 	CreateTexture("雷2.png", RAIN_TEX);
+	CreateTexture("カウントダウン3.png", COUNT3_TEX);
+	CreateTexture("カウントダウン2.png", COUNT2_TEX);
+	CreateTexture("カウントダウン1.png", COUNT1_TEX);
+	CreateTexture("カウントダウン0.png", COUNTGO_TEX);
+
 }

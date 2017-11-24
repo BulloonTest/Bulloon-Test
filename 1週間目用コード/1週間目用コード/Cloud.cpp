@@ -1,3 +1,5 @@
+/* ` â_(è·äQï®) ` */
+
 #include<Windows.h>
 #include<d3dx9.h>
 #include"Main.h"
@@ -6,8 +8,8 @@
 #define GAMESPEED 1.5
 
 
-CHARCTER_STATE g_cloud = { 1400.f,75.f,128.f };
-CHARCTER_STATE g_Rain  = { 1400.f,180.f,64.f };
+CHARCTER_STATE g_cloud = { 1400.f,150.f,128.f };
+CHARCTER_STATE g_Rain = { g_cloud.x,g_cloud.y + 105.f,64.f };
 
 static float x = 0;
 

@@ -1,3 +1,5 @@
+/*　ゴール(クリアの為に必要)　*/
+
 #include<Windows.h>
 #include<d3dx9.h>
 #include"Main.h"

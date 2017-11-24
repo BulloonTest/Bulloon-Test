@@ -1,3 +1,5 @@
+/*　蜂(障害物)の表示：行動　*/
+
 #include<Windows.h>
 #include<d3d9.h>
 #include"hornet.h"

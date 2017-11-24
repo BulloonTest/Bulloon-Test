@@ -1,3 +1,5 @@
+/*　風船の表示：行動　*/
+
 #include<Windows.h>
 #include<d3d9.h>
 #include<dinput.h>

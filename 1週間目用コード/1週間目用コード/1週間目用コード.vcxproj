@@ -120,12 +120,15 @@
     <ClCompile Include="Balloon.cpp" />
     <ClCompile Include="Cloud.cpp" />
     <ClCompile Include="CollisionJudgment.cpp" />
+    <ClCompile Include="Countdown.cpp" />
     <ClCompile Include="Dinput.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Goal.cpp" />
     <ClCompile Include="hornet.cpp" />
+    <ClCompile Include="HP.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Rotation.cpp" />
+    <ClCompile Include="Score.cpp" />
     <ClCompile Include="Settexture.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -133,12 +136,15 @@
     <ClInclude Include="Balloon.h" />
     <ClInclude Include="Cloud.h" />
     <ClInclude Include="CollisionJudgment.h" />
+    <ClInclude Include="Countdown.h" />
     <ClInclude Include="Dinput.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Goal.h" />
     <ClInclude Include="hornet.h" />
+    <ClInclude Include="HP.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="Rotation.h" />
+    <ClInclude Include="Score.h" />
     <ClInclude Include="Settexture.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

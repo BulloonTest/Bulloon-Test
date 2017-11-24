@@ -1,3 +1,5 @@
+/*　背景の表示：行動　*/
+
 #include<Windows.h>
 #include<d3dx9.h>
 #include"BackGround.h"
