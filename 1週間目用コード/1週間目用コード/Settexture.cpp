@@ -42,7 +42,7 @@ void Loadtexture()
 {
 	//頂点に入れるデータを設定
 	g_pD3Device->SetFVF(D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1);
-	CreateTexture("Test.jpg", BACKGROUND_TEX);
+	CreateTexture("test.jpg", BACKGROUND_TEX);
 	CreateTexture("Test.jpg", BACKGROUND_TEX2);
 	CreateTexture("風船2.png", BALLOON_TEX);
 	CreateTexture("蜂2.png", HORNET_TEX);
