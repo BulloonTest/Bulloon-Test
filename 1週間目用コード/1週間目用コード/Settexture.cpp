@@ -52,5 +52,4 @@ void Loadtexture()
 	CreateTexture("カウントダウン2.png", COUNT2_TEX);
 	CreateTexture("カウントダウン1.png", COUNT1_TEX);
 	CreateTexture("カウントダウン0.png", COUNTGO_TEX);
-
 }
