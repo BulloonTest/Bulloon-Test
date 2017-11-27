@@ -10,19 +10,16 @@
 
 CHARCTER_STATE g_hornet = { 700.f,300.f,64.f };
 
-static float x = 0;
-static float y = 0;
-
 static int count = 0;
 
 void HornetDraw()
 {
 	CUSTOMVERTEX Hornet[]
 	{
-		{ g_hornet.x - g_hornet.scale + x, g_hornet.y - g_hornet.scale + y, 1.f, 1.f, 0xFFFFFFFF, 0.f, 0.f },
-		{ g_hornet.x + g_hornet.scale + x, g_hornet.y - g_hornet.scale + y, 1.f, 1.f, 0xFFFFFFFF, 1.f, 0.f },
-		{ g_hornet.x + g_hornet.scale + x, g_hornet.y + g_hornet.scale + y, 1.f, 1.f, 0xFFFFFFFF, 1.f, 1.f },
-		{ g_hornet.x - g_hornet.scale + x, g_hornet.y + g_hornet.scale + y, 1.f, 1.f, 0xFFFFFFFF, 0.f, 1.f }
+		{ g_hornet.x - g_hornet.scale, g_hornet.y - g_hornet.scale, 1.f, 1.f, 0xFFFFFFFF, 0.f, 0.f },
+		{ g_hornet.x + g_hornet.scale, g_hornet.y - g_hornet.scale, 1.f, 1.f, 0xFFFFFFFF, 1.f, 0.f },
+		{ g_hornet.x + g_hornet.scale, g_hornet.y + g_hornet.scale, 1.f, 1.f, 0xFFFFFFFF, 1.f, 1.f },
+		{ g_hornet.x - g_hornet.scale, g_hornet.y + g_hornet.scale, 1.f, 1.f, 0xFFFFFFFF, 0.f, 1.f }
 	};
 
 	/*–¢Š®¬*/
@@ -44,15 +41,15 @@ void HornetControl()
 {
 	count++;
 
-	x -= GAMESPEED;
+	g_hornet.x -= GAMESPEED;
 
 	if (count > 60)
 	{
-		y -= 3.5;
+		g_hornet.y -= 3.5;
 	}
 	else
 	{
-		y += 3.5;
+		g_hornet.y += 3.5;
 	}
 
 	if (count > 130)

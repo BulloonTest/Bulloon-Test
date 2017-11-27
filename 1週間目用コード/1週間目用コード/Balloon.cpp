@@ -12,18 +12,18 @@
 #define	HEIGHT	720
 
 static float Gravity = 1.2;
-float y = 0;
 
+/*パラメーター*/
 CHARCTER_STATE g_balloon = { 300.f,400.f,64.f };
 
 void BalloonDraw()
 {
 	CUSTOMVERTEX Balloon[]
 	{
-		{ g_balloon.x - g_balloon.scale, g_balloon.y - g_balloon.scale + y, 1.f, 1.f, 0xFFFFFFFF, 0.f, 0.f },
-		{ g_balloon.x + g_balloon.scale, g_balloon.y - g_balloon.scale + y, 1.f, 1.f, 0xFFFFFFFF, 1.f, 0.f },
-		{ g_balloon.x + g_balloon.scale, g_balloon.y + g_balloon.scale + y, 1.f, 1.f, 0xFFFFFFFF, 1.f, 1.f },
-		{ g_balloon.x - g_balloon.scale, g_balloon.y + g_balloon.scale + y, 1.f, 1.f, 0xFFFFFFFF, 0.f, 1.f }
+		{ g_balloon.x - g_balloon.scale, g_balloon.y - g_balloon.scale, 1.f, 1.f, 0xFFFFFFFF, 0.f, 0.f },
+		{ g_balloon.x + g_balloon.scale, g_balloon.y - g_balloon.scale, 1.f, 1.f, 0xFFFFFFFF, 1.f, 0.f },
+		{ g_balloon.x + g_balloon.scale, g_balloon.y + g_balloon.scale, 1.f, 1.f, 0xFFFFFFFF, 1.f, 1.f },
+		{ g_balloon.x - g_balloon.scale, g_balloon.y + g_balloon.scale, 1.f, 1.f, 0xFFFFFFFF, 0.f, 1.f }
 	};
 
 	g_pD3Device->SetTexture(0, g_pTexture[BALLOON_TEX]);
@@ -38,12 +38,13 @@ void BalloonControl()
 	static int cnt;
 
 	/*重力を足していって下に落ちていくように*/
-	y += Gravity;
+	g_balloon.y += Gravity;
 
+	
 	/*SPEACEボタンを押している間は浮く*/
 	if (key[DIK_SPACE] == ON)
 	{
-		y -= 6;
+		g_balloon.y -= 6;
 	}
 
 	/*離すと最後に少し上に上昇するように*/
@@ -54,14 +55,14 @@ void BalloonControl()
 	
 	if (--cnt > 0)
 	{
-		y -= 3;
+		g_balloon.y -= 3;
 	}
 
 	/*当たり判定関数を使う*/
-	//if (collisionBB(g_balloon, g_hornet))
-	//{
-	//	y += 2;
-	//}
+	if (collisionBB(g_balloon, g_hornet))
+	{
+		g_balloon.y += 2;
+	}
 
 	//if (CokkisionCC(g_balloon, g_hornet))
 	//{
