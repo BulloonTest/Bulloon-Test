@@ -8,12 +8,12 @@
 #include<dsound.h>
 
 /* 頂点構造体 */
-struct CUSTOMVERTEX
+typedef struct _CUSTOMVERTEX
 {
 	FLOAT	x, y, z, rhw;
 	DWORD	color;
 	FLOAT	tu, tv;
-};
+}CUSTOMVERTEX, *LPCUSTOMVRTEX;
 
 enum TEXTURE
 {
@@ -33,10 +33,10 @@ enum TEXTURE
 	TEXMAX
 };
 
-struct CHARCTER_STATE
+typedef struct _CHARCTER_STATE
 {
 	float x, y, scale;
-};
+}CHARCTER_STATE, *LPCHARCTER_STATE;
 
 extern LPDIRECT3DTEXTURE9	  g_pTexture[TEXMAX];	//	画像の情報を入れておく為の配列
 extern IDirect3DDevice9*	  g_pD3Device;		//	Direct3Dのデバイス

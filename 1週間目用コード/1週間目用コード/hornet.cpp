@@ -4,9 +4,9 @@
 #include<d3d9.h>
 #include"hornet.h"
 #include"Main.h"
+#include"Rotation.h"
 
 #define GAMESPEED 1.5
-
 
 CHARCTER_STATE g_hornet = { 700.f,300.f,64.f };
 
@@ -24,6 +24,17 @@ void HornetDraw()
 		{ g_hornet.x + g_hornet.scale + x, g_hornet.y + g_hornet.scale + y, 1.f, 1.f, 0xFFFFFFFF, 1.f, 1.f },
 		{ g_hornet.x - g_hornet.scale + x, g_hornet.y + g_hornet.scale + y, 1.f, 1.f, 0xFFFFFFFF, 0.f, 1.f }
 	};
+
+	/*未完成*/
+	/*ここで回転関数を使って下半身を揺らしている*/
+	if (count > 60)
+	{
+		Rotation(Hornet, 0.2f);
+	}
+	else
+	{
+		Rotation(Hornet, -0.2f);
+	}
 
 	g_pD3Device->SetTexture(0, g_pTexture[HORNET_TEX]);
 	g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, Hornet, sizeof(CUSTOMVERTEX));
@@ -49,5 +60,4 @@ void HornetControl()
 		count = 0;
 	}
 
-	/*ここで回転関数を使って下半身を揺らせれるように*/
 }

@@ -22,24 +22,27 @@ void CountDraw()
 			{ g_count.x - g_count.scale, g_count.y + g_count.scale, 1.f, 1.f, 0xFFFFFFFF, 0.f, 1.f }
 	};
 
+	/*âûã}èàíuÇ»ÇÃÇ≈å„Ç≈íºÇ∑éñ*/
 	if (GameCount < 60)
 	{
 		g_pD3Device->SetTexture(0, g_pTexture[COUNT3_TEX]);
+		g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, count, sizeof(CUSTOMVERTEX));
 	}
 	else if (GameCount < 120)
 	{
 		g_pD3Device->SetTexture(0, g_pTexture[COUNT2_TEX]);
+		g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, count, sizeof(CUSTOMVERTEX));
 	}
 	else if (GameCount < 170)
 	{
 		g_pD3Device->SetTexture(0, g_pTexture[COUNT1_TEX]);
+		g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, count, sizeof(CUSTOMVERTEX));
 	}
-	else if (GameCount > 170)
+	else if (GameCount > 180)
 	{
 		g_pD3Device->SetTexture(0, g_pTexture[COUNTGO_TEX]);
+		g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, count, sizeof(CUSTOMVERTEX));
 	}
-
-	g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, count, sizeof(CUSTOMVERTEX));
 }
 
 void CountControl()

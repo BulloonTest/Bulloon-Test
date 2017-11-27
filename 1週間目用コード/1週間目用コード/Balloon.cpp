@@ -5,6 +5,8 @@
 #include<dinput.h>
 #include"Dinput.h"
 #include"Main.h"
+#include"CollisionJudgment.h"
+#include"hornet.h"
 
 #define WIDTH	1280
 #define	HEIGHT	720
@@ -56,5 +58,13 @@ void BalloonControl()
 	}
 
 	/*“–‚½‚è”»’èŠÖ”‚ğg‚¤*/
+	//if (collisionBB(g_balloon, g_hornet))
+	//{
+	//	y += 2;
+	//}
 
+	//if (CokkisionCC(g_balloon, g_hornet))
+	//{
+	//	y += 5;
+	//}
 }
