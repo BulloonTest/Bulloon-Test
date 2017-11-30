@@ -3,7 +3,7 @@
 #include<Xinput.h>
 #include<stdio.h>
 #include"Main.h"
-#include"Settexture.h"
+#include"Render.h"
 #include"Dinput.h"
 #include"GameManager.h"
 

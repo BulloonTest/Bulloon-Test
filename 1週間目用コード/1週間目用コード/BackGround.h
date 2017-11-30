@@ -4,10 +4,4 @@
 void BackDraw();
 void BackControl();
 
-struct MAP
-{
-	float x;
-	float y;
-};
-
 #endif

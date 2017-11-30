@@ -19,18 +19,3 @@ bool collisionBB(CHARCTER_STATE obj1, CHARCTER_STATE obj2)
  		return false;
 	}
 }
-
-bool CokkisionCC(CHARCTER_STATE obj1, CHARCTER_STATE obj2)
-{
-	if ((obj1.x - obj1.scale / 2 <= obj2.x - obj1.scale / 2 <= obj1.x + obj1.scale / 2) &&
-		(obj1.x - obj1.scale / 2 <= obj2.x + obj1.scale / 2 <= obj1.x + obj1.scale / 2) ||
-		(obj1.y - obj1.scale / 2 <= obj2.y - obj1.scale / 2 <= obj1.y + obj1.scale / 2) &&
-		(obj1.y - obj1.scale / 2 <= obj2.y + obj1.scale / 2 <= obj1.y + obj1.scale / 2))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}

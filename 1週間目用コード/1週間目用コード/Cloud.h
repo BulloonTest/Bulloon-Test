@@ -3,6 +3,9 @@
 
 void CloudDraw();
 void CloudControl();
-void RainCloudDraw();
+void ThunderDraw();
+
+extern CHARCTER_STATE g_cloud ;
+extern CHARCTER_STATE g_Thunder;
 
 #endif

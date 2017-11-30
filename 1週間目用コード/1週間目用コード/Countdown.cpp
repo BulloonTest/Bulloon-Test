@@ -8,7 +8,7 @@
 
 static int GameCount = 0;
 
-CHARCTER_STATE g_count = { 640.f,360.f,128.f };
+CHARCTER_STATE g_count = { 640.f,360.f,128.f, 0.f };
 
 void CountDraw()
 {
@@ -25,24 +25,27 @@ void CountDraw()
 	/*âûã}èàíuÇ»ÇÃÇ≈å„Ç≈íºÇ∑éñ*/
 	if (GameCount < 60)
 	{
-		g_pD3Device->SetTexture(0, g_pTexture[COUNT3_TEX]);
-		g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, count, sizeof(CUSTOMVERTEX));
+		g_pD3Device->SetTexture(0, g_pTexture[COUNT3_TEX]);	
 	}
 	else if (GameCount < 120)
 	{
-		g_pD3Device->SetTexture(0, g_pTexture[COUNT2_TEX]);
-		g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, count, sizeof(CUSTOMVERTEX));
+		g_pD3Device->SetTexture(0, g_pTexture[COUNT2_TEX]);		
 	}
 	else if (GameCount < 170)
 	{
 		g_pD3Device->SetTexture(0, g_pTexture[COUNT1_TEX]);
-		g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, count, sizeof(CUSTOMVERTEX));
 	}
+
 	else if (GameCount > 180)
 	{
 		g_pD3Device->SetTexture(0, g_pTexture[COUNTGO_TEX]);
+	}
+
+	if (!(GameCount >= 170) || !(GameCount <= 180))
+	{
 		g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, count, sizeof(CUSTOMVERTEX));
 	}
+	
 }
 
 void CountControl()

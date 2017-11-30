@@ -4,4 +4,6 @@
 void GoalDraw();
 void Goalcountrol();
 
+extern CHARCTER_STATE g_Goal;
+
 #endif 

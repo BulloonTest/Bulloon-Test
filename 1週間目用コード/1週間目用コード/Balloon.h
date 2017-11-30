@@ -1,7 +1,8 @@
 #ifndef BALLOON_H
 #define	BALLOON_H
 
-void BalloonDraw();
 void BalloonControl();
+
+extern CHARCTER_STATE g_balloon;
 
 #endif 

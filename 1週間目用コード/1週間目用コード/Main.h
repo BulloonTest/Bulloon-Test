@@ -23,19 +23,20 @@ enum TEXTURE
 	HORNET_TEX,
 	CLOUD_TEX,
 	GOAL_TEX,
-	RAIN_TEX,
+	THUNDER_TEX,
 	HP_TEX,
 	SCORE_TEX,
 	COUNT3_TEX,
 	COUNT2_TEX,
 	COUNT1_TEX,
 	COUNTGO_TEX,
+	BIRD_TEX,
 	TEXMAX
 };
 
 typedef struct _CHARCTER_STATE
 {
-	float x, y, scale;
+	float x, y, scale, ang;
 }CHARCTER_STATE, *LPCHARCTER_STATE;
 
 extern LPDIRECT3DTEXTURE9	  g_pTexture[TEXMAX];	//	‰æ‘œ‚Ìî•ñ‚ð“ü‚ê‚Ä‚¨‚­ˆ×‚Ì”z—ñ

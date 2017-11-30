@@ -8,7 +8,7 @@
 
 #define GAMESPEED 1.5
 
-CHARCTER_STATE g_hornet = { 700.f,300.f,64.f };
+CHARCTER_STATE g_hornet = { 700.f,300.f,64.f, 0.f };
 
 static int count = 0;
 
@@ -26,7 +26,7 @@ void HornetDraw()
 	/*‚±‚±‚Å‰ñ“]ŠÖ”‚ðŽg‚Á‚Ä‰º”¼g‚ð—h‚ç‚µ‚Ä‚¢‚é*/
 	if (count > 60)
 	{
-		Rotation(Hornet, 0.2f);
+		Rotation(Hornet, 5.f);
 	}
 	else
 	{

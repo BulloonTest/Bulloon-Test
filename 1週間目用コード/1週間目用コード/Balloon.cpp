@@ -5,8 +5,7 @@
 #include<dinput.h>
 #include"Dinput.h"
 #include"Main.h"
-#include"CollisionJudgment.h"
-#include"hornet.h"
+#include"Rotation.h"
 
 #define WIDTH	1280
 #define	HEIGHT	720
@@ -14,24 +13,12 @@
 static float Gravity = 1.2;
 
 /*パラメーター*/
-CHARCTER_STATE g_balloon = { 300.f,400.f,64.f };
-
-void BalloonDraw()
-{
-	CUSTOMVERTEX Balloon[]
-	{
-		{ g_balloon.x - g_balloon.scale, g_balloon.y - g_balloon.scale, 1.f, 1.f, 0xFFFFFFFF, 0.f, 0.f },
-		{ g_balloon.x + g_balloon.scale, g_balloon.y - g_balloon.scale, 1.f, 1.f, 0xFFFFFFFF, 1.f, 0.f },
-		{ g_balloon.x + g_balloon.scale, g_balloon.y + g_balloon.scale, 1.f, 1.f, 0xFFFFFFFF, 1.f, 1.f },
-		{ g_balloon.x - g_balloon.scale, g_balloon.y + g_balloon.scale, 1.f, 1.f, 0xFFFFFFFF, 0.f, 1.f }
-	};
-
-	g_pD3Device->SetTexture(0, g_pTexture[BALLOON_TEX]);
-	g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, Balloon, sizeof(CUSTOMVERTEX));
-}
+CHARCTER_STATE g_balloon = { 300.f,400.f,64.f, 0.f };
 
 void BalloonControl()
 {
+	static float da = 0.6f;
+
 	KEYSTATE key[256];
 	KeyCheckDinput(&key[DIK_SPACE], DIK_SPACE);
 
@@ -45,6 +32,7 @@ void BalloonControl()
 	if (key[DIK_SPACE] == ON)
 	{
 		g_balloon.y -= 6;
+		g_balloon.ang = 0.f;
 	}
 
 	/*離すと最後に少し上に上昇するように*/
@@ -58,14 +46,11 @@ void BalloonControl()
 		g_balloon.y -= 3;
 	}
 
-	/*当たり判定関数を使う*/
-	if (collisionBB(g_balloon, g_hornet))
+	g_balloon.ang += da;
+
+	if (fabs(g_balloon.ang) > 15.f) 
 	{
-		g_balloon.y += 2;
+		da *= -1;
 	}
 
-	//if (CokkisionCC(g_balloon, g_hornet))
-	//{
-	//	y += 5;
-	//}
 }
