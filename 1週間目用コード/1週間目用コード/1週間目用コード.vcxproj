@@ -121,8 +121,10 @@
     <ClCompile Include="Bird.cpp" />
     <ClCompile Include="Cloud.cpp" />
     <ClCompile Include="CollisionJudgment.cpp" />
+    <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Countdown.cpp" />
     <ClCompile Include="Dinput.cpp" />
+    <ClCompile Include="DraManager.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Goal.cpp" />
     <ClCompile Include="hornet.cpp" />
@@ -138,8 +140,10 @@
     <ClInclude Include="Bird.h" />
     <ClInclude Include="Cloud.h" />
     <ClInclude Include="CollisionJudgment.h" />
+    <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Countdown.h" />
     <ClInclude Include="Dinput.h" />
+    <ClInclude Include="DraManager.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Goal.h" />
     <ClInclude Include="hornet.h" />

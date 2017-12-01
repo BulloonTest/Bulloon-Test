@@ -4,7 +4,7 @@
 
 #define BIRDSPEED 5
 
-CHARCTER_STATE g_Bird = { 3000.f,300.f,64.f,0.f };
+CHARCTER_STATE g_Bird = { 3000.f,450.f,64.f,0.f };
 
 void BirdControl()
 {
