@@ -10,12 +10,15 @@
 
 #define GAMESPEED 1.5
 
+// キャメルケースならg_Map ntk
 CHARCTER_STATE g_map = { 0.f, 0.f,0.f,0.f };
 CHARCTER_STATE g_map2 = { WIDTH, HEIGHT,0.f,0.f };
 
 
 void BackDraw()
 {
+	// BackGroundとBackGround2は一部の値が違うだけで処理は同じなので
+	// 関数分けに挑戦してほしい
 	/*背景*/
 	CUSTOMVERTEX BackGround[]
 	{

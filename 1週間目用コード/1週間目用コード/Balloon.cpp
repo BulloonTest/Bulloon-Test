@@ -13,6 +13,7 @@
 static float Gravity = 1.2;
 
 /*パラメーター*/
+// キャメルケースなら g_Balloon
 CHARCTER_STATE g_balloon = { 300.f,400.f,64.f, 0.f };
 
 void BalloonControl()
@@ -28,6 +29,8 @@ void BalloonControl()
 	g_balloon.y += Gravity;
 
 	
+	// 押してる時と押してない時は同時で条件を満たさないので
+	// if elseに変更する
 	/*SPEACEボタンを押している間は浮く*/
 	if (key[DIK_SPACE] == ON)
 	{

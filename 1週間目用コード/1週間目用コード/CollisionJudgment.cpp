@@ -5,7 +5,7 @@
 #include"Main.h"
 
 
-bool collisionBB(CHARCTER_STATE obj1, CHARCTER_STATE obj2)
+bool CollisionBB(CHARCTER_STATE obj1, CHARCTER_STATE obj2)
 {
 	if ((obj1.x - obj1.scale / 2 < obj2.x + obj2.scale / 2) &&
 		(obj2.x - obj2.scale / 2 < obj1.x + obj1.scale / 2) &&

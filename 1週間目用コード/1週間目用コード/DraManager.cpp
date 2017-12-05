@@ -18,20 +18,28 @@ static int LoadCount = 0;
 /*　ここで全ての画像を生成と描画をしている　注意：置く順番に注意をする事　*/
 void DrawManager()
 {
+	CUSTOMVERTEX cv[4];
+
 	TimeCount++;
 
 	BackDraw();
-	Make(g_hornet, HORNET_TEX);
-	Make(g_Bird, BIRD_TEX);
-	Make(g_Goal, GOAL_TEX);
-	Make(g_balloon, BALLOON_TEX);
-	Make(g_cloud, CLOUD_TEX);
+	MakeVertex(g_hornet, cv);
+	TexSetDraw(g_pD3Device, g_pTexture[HORNET_TEX], cv);
+	MakeVertex(g_Bird,cv);
+	TexSetDraw(g_pD3Device, g_pTexture[BIRD_TEX], cv);
+	MakeVertex(g_Goal,cv);
+	TexSetDraw(g_pD3Device, g_pTexture[GOAL_TEX], cv);
+	MakeVertex(g_balloon,cv);
+	TexSetDraw(g_pD3Device, g_pTexture[BALLOON_TEX], cv);
+	MakeVertex(g_Cloud,cv);
+	TexSetDraw(g_pD3Device, g_pTexture[CLOUD_TEX], cv);
 
 	if (TimeCount > 180)
 	{
 		LoadCount++;
 
-		Make(g_Thunder, THUNDER_TEX);
+		MakeVertex(g_Thunder,cv);
+		TexSetDraw(g_pD3Device, g_pTexture[THUNDER_TEX], cv);
 
 		if (LoadCount > 60)
 		{

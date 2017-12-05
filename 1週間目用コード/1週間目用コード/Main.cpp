@@ -1,7 +1,6 @@
 #include<Windows.h>
 #include<d3dx9.h>
 #include<Xinput.h>
-#include<stdio.h>
 #include"Main.h"
 #include"Render.h"
 #include"Dinput.h"
@@ -109,11 +108,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInsta, LPSTR szStr, INT i
 		D3DCREATE_SOFTWARE_VERTEXPROCESSING,
 		&g_D3dPresentParameters, &g_pD3Device);
 
-	Settexture();
-	Loadtexture();
+	SetTexture();
+	LoadTexture();
 
 	InitDinput();
 	InitDinputKey(hWnd);
+
+	/*ここで接続確認をする*/
 
 	DWORD SyncOld = timeGetTime();		//	システム時間を取得
 	DWORD SyncNow = timeGetTime();

@@ -7,8 +7,8 @@
 
 #define GAMESPEED 1.5
 
-CHARCTER_STATE g_cloud = { 1400.f,150.f,128.f, 0.f };
-CHARCTER_STATE g_Thunder = { g_cloud.x,g_cloud.y + 105.f,64.f, 0.f };
+CHARCTER_STATE g_Cloud = { 1400.f,150.f,128.f, 0.f };
+CHARCTER_STATE g_Thunder = { g_Cloud.x,g_Cloud.y + 105.f,64.f, 0.f };
 
 static int TimeCount = 0;
 static int LoadCount = 0;
@@ -17,10 +17,10 @@ void CloudDraw()
 {
 	CUSTOMVERTEX cloud[]
 	{
-		{ g_cloud.x - g_cloud.scale, g_cloud.y - g_cloud.scale, 1.f, 1.f, 0xFFFFFFFF, 0.f, 0.f },
-		{ g_cloud.x + g_cloud.scale, g_cloud.y - g_cloud.scale, 1.f, 1.f, 0xFFFFFFFF, 1.f, 0.f },
-		{ g_cloud.x + g_cloud.scale, g_cloud.y + g_cloud.scale, 1.f, 1.f, 0xFFFFFFFF, 1.f, 1.f },
-		{ g_cloud.x - g_cloud.scale, g_cloud.y + g_cloud.scale, 1.f, 1.f, 0xFFFFFFFF, 0.f, 1.f }
+		{ g_Cloud.x - g_Cloud.scale, g_Cloud.y - g_Cloud.scale, 1.f, 1.f, 0xFFFFFFFF, 0.f, 0.f },
+		{ g_Cloud.x + g_Cloud.scale, g_Cloud.y - g_Cloud.scale, 1.f, 1.f, 0xFFFFFFFF, 1.f, 0.f },
+		{ g_Cloud.x + g_Cloud.scale, g_Cloud.y + g_Cloud.scale, 1.f, 1.f, 0xFFFFFFFF, 1.f, 1.f },
+		{ g_Cloud.x - g_Cloud.scale, g_Cloud.y + g_Cloud.scale, 1.f, 1.f, 0xFFFFFFFF, 0.f, 1.f }
 	};
 	g_pD3Device->SetTexture(0, g_pTexture[CLOUD_TEX]);
 	g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, cloud, sizeof(CUSTOMVERTEX));
@@ -54,6 +54,6 @@ void ThunderDraw()
 
 void CloudControl()
 {
-	g_cloud .x -= GAMESPEED;
+	g_Cloud .x -= GAMESPEED;
 	g_Thunder.x -= GAMESPEED;
 }

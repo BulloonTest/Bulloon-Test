@@ -5,7 +5,7 @@
 #include"main.h"
 #include"Rotation.h"
 
-void Settexture()
+void SetTexture()
 {
 	/*ここを徹底的に勉強する事*/
 	g_pD3Device->SetRenderState(D3DRS_ALPHABLENDENABLE, true);
@@ -19,7 +19,7 @@ void Settexture()
 	g_pD3Device->SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
 }
 
-/*createtexture*/
+
 void CreateTexture(const char* text, TEXTURE texture_ID)
 {
 	D3DXCreateTextureFromFileEx(
@@ -39,7 +39,7 @@ void CreateTexture(const char* text, TEXTURE texture_ID)
 		&g_pTexture[texture_ID]);
 }
 
-void Loadtexture()
+void LoadTexture()
 {
 	//頂点に入れるデータを設定
 	g_pD3Device->SetFVF(D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1);
@@ -56,7 +56,28 @@ void Loadtexture()
 	CreateTexture("カウントダウン0.png", COUNTGO_TEX);
 }
 
-void Make(CHARCTER_STATE Obj, TEXTURE texture_ID)
+void MakeVertex(CHARCTER_STATE Obj, CUSTOMVERTEX cv[])
+{
+	cv[0].x = cv[3].x = Obj.x - Obj.scale;
+	cv[1].x = cv[2].x = Obj.x + Obj.scale;
+
+	cv[0].y = cv[1].y = Obj.y - Obj.scale;
+	cv[2].y = cv[3].y = Obj.y + Obj.scale;
+
+	for (int i = 0; i < 4; i++)
+	{
+		cv[i].z = 1.f;
+		cv[i].rhw = 1.f;
+		cv[i].color = 0xFFFFFFFF;
+	}
+
+	cv[0].tu = cv[0].tv = cv[1].tv = cv[3].tu = 0.f;
+	cv[1].tu = cv[2].tu = cv[2].tv = cv[3].tv = 1.f;
+
+	Rotation(cv, Obj.ang);
+}
+
+void DrawVertex(CHARCTER_STATE Obj, TEXTURE texture_ID)
 {
 	CUSTOMVERTEX cv[4];
 
@@ -80,4 +101,29 @@ void Make(CHARCTER_STATE Obj, TEXTURE texture_ID)
 
 	g_pD3Device->SetTexture(0, g_pTexture[texture_ID]);
 	g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, cv, sizeof(CUSTOMVERTEX));
+}
+
+void TexSet(IDirect3DDevice9* pD3Device, LPDIRECT3DTEXTURE9 pTexture)
+{
+	g_pD3Device->SetTexture(0, pTexture);
+}
+
+void TexDraw(IDirect3DDevice9* pD3Device, LPCUSTOMVRTEX pVertex)
+{
+	g_pD3Device->DrawPrimitiveUP(
+		D3DPT_TRIANGLEFAN,
+		2, 
+		pVertex, 
+		sizeof(CUSTOMVERTEX));
+}
+
+void TexSetDraw(IDirect3DDevice9* pD3Device, LPDIRECT3DTEXTURE9 pTexture, LPCUSTOMVRTEX pVertex)
+{
+	TexSet(pD3Device, pTexture);
+
+	g_pD3Device->DrawPrimitiveUP(
+		D3DPT_TRIANGLEFAN,
+		2,
+		pVertex,
+		sizeof(CUSTOMVERTEX));
 }
