@@ -8,7 +8,7 @@
 
 static int GameCount = 0;
 
-CHARCTER_STATE g_count = { 640.f,360.f,128.f, 0.f };
+CHARCTER_STATE g_count = { 640.f,360.f,128.f, 0.f,true };
 
 void CountDraw()
 {

@@ -7,7 +7,7 @@
 
 #define GAMESPEED 1.5
 
-CHARCTER_STATE g_Goal = { 4500.f,400.f,128.f, 0.f };
+CHARCTER_STATE g_Goal = { 4500.f,400.f,128.f, 0.f ,true };
 
 
 void GoalDraw()

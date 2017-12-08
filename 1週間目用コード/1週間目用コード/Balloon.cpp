@@ -14,7 +14,7 @@ static float Gravity = 1.2;
 
 /*パラメーター*/
 // キャメルケースなら g_Balloon
-CHARCTER_STATE g_balloon = { 300.f,400.f,64.f, 0.f };
+CHARCTER_STATE g_balloon = { 300.f,400.f,64.f, 0.f,true };
 
 void BalloonControl()
 {

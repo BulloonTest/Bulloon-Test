@@ -11,9 +11,8 @@
 #define GAMESPEED 1.5
 
 // キャメルケースならg_Map ntk
-CHARCTER_STATE g_map = { 0.f, 0.f,0.f,0.f };
-CHARCTER_STATE g_map2 = { WIDTH, HEIGHT,0.f,0.f };
-
+CHARCTER_STATE g_map = { 0.f, 0.f,0.f,0.f ,true };
+CHARCTER_STATE g_map2 = { WIDTH, HEIGHT,0.f,0.f,true };
 
 void BackDraw()
 {

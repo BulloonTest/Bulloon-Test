@@ -7,8 +7,8 @@
 
 #define GAMESPEED 1.5
 
-CHARCTER_STATE g_Cloud = { 1400.f,150.f,128.f, 0.f };
-CHARCTER_STATE g_Thunder = { g_Cloud.x,g_Cloud.y + 105.f,64.f, 0.f };
+CHARCTER_STATE g_Cloud = { 1400.f,150.f,128.f, 0.f ,true };
+CHARCTER_STATE g_Thunder = { g_Cloud.x,g_Cloud.y + 105.f,64.f, 0.f ,true };
 
 static int TimeCount = 0;
 static int LoadCount = 0;

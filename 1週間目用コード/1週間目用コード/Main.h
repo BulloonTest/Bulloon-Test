@@ -37,6 +37,7 @@ enum TEXTURE
 typedef struct _CHARCTER_STATE
 {
 	float x, y, scale, ang;
+	bool activflg;
 }CHARCTER_STATE, *LPCHARCTER_STATE;
 
 extern LPDIRECT3DTEXTURE9	  g_pTexture[TEXMAX];	//	‰æ‘œ‚Ìî•ñ‚ğ“ü‚ê‚Ä‚¨‚­ˆ×‚Ì”z—ñ

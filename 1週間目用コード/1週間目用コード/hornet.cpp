@@ -8,9 +8,10 @@
 
 #define GAMESPEED 1.5
 
-CHARCTER_STATE g_hornet = { 700.f,300.f,64.f, 0.f };
+CHARCTER_STATE g_hornet = { 700.f,300.f,64.f, 0.f,true };
 
 static int count = 0;
+static bool activ = false;
 
 void HornetDraw()
 {
