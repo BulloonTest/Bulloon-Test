@@ -23,23 +23,17 @@ void DrawManager()
 	TimeCount++;
 
 	BackDraw();
-	MakeVertex(g_hornet, cv);
-	TexSetDraw(g_pD3Device, g_pTexture[HORNET_TEX], cv);
-	MakeVertex(g_Bird,cv);
-	TexSetDraw(g_pD3Device, g_pTexture[BIRD_TEX], cv);
-	MakeVertex(g_Goal,cv);
-	TexSetDraw(g_pD3Device, g_pTexture[GOAL_TEX], cv);
-	MakeVertex(g_balloon,cv);
-	TexSetDraw(g_pD3Device, g_pTexture[BALLOON_TEX], cv);
-	MakeVertex(g_Cloud,cv);
-	TexSetDraw(g_pD3Device, g_pTexture[CLOUD_TEX], cv);
+	DrawVertex(g_hornet, HORNET_TEX);
+	DrawVertex(g_Bird, BIRD_TEX);
+	DrawVertex(g_Goal, GOAL_TEX);
+	DrawVertex(g_balloon, BALLOON_TEX);
+	DrawVertex(g_Cloud, CLOUD_TEX);
 
 	if (TimeCount > 180)
 	{
 		LoadCount++;
 
-		MakeVertex(g_Thunder,cv);
-		TexSetDraw(g_pD3Device, g_pTexture[THUNDER_TEX], cv);
+		DrawVertex(g_Thunder, THUNDER_TEX);
 
 		if (LoadCount > 60)
 		{

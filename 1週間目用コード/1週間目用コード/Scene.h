@@ -1,0 +1,14 @@
+#ifndef SCENE_H
+#define	SCENE_H
+
+enum SCENE_LIST
+{
+	TITLE_SCENE,
+	EASY_SCENE,
+	NOMAL_SCENE,
+	HARD_SCENE,
+	EXTRA_SCENE,
+	MAX_SCENE,
+};
+
+#endif

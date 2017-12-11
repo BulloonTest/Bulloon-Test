@@ -119,17 +119,21 @@
     <ClCompile Include="BackGround.cpp" />
     <ClCompile Include="Balloon.cpp" />
     <ClCompile Include="Bird.cpp" />
+    <ClCompile Include="Bonus.cpp" />
     <ClCompile Include="Cloud.cpp" />
     <ClCompile Include="CollisionJudgment.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Countdown.cpp" />
     <ClCompile Include="Dinput.cpp" />
-    <ClCompile Include="DraManager.cpp" />
+    <ClCompile Include="DrawManager.cpp" />
+    <ClCompile Include="Easy_Draw.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Goal.cpp" />
+    <ClCompile Include="Hard_Draw.cpp" />
     <ClCompile Include="hornet.cpp" />
     <ClCompile Include="HP.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Nomal_Draw.cpp" />
     <ClCompile Include="Rotation.cpp" />
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="Render.cpp" />
@@ -138,6 +142,7 @@
     <ClInclude Include="BackGround.h" />
     <ClInclude Include="Balloon.h" />
     <ClInclude Include="Bird.h" />
+    <ClInclude Include="Bonus.h" />
     <ClInclude Include="Cloud.h" />
     <ClInclude Include="CollisionJudgment.h" />
     <ClInclude Include="CollisionManager.h" />
@@ -150,6 +155,7 @@
     <ClInclude Include="HP.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="Rotation.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="Score.h" />
     <ClInclude Include="Render.h" />
   </ItemGroup>

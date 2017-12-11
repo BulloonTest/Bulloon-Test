@@ -3,7 +3,6 @@
 
 #include"Main.h"
 
-void HornetDraw();
 void HornetControl();
 
 extern CHARCTER_STATE g_hornet;

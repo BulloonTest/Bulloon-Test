@@ -19,20 +19,19 @@ void ManagerCollision()
 	/*プレイヤーと蜂*/
 	if ((CollisionBB(g_balloon, g_hornet))&&(g_hornet.activflg == true))
 	{
-		g_balloon.y += 2;
 		g_hornet.activflg = false;
 	}
 
 	/*プレイヤーと雲*/
 	if ((CollisionBB(g_balloon, g_Cloud))&&(g_Cloud.activflg == true))
 	{
-		g_balloon.y += 2;
+		g_Cloud.activflg = false;
 	}
 
 	/*プレイヤーと雷*/
 	if ((CollisionBB(g_balloon, g_Thunder))&&(g_Thunder.activflg == true))
 	{
-		g_balloon.y += 2;
+		g_Thunder.activflg = false;
 	}
 
 	/*プレイヤーとゴール()*/
@@ -44,18 +43,20 @@ void ManagerCollision()
 	/*プレイヤーと鳥の当たり判定*/
 	if ((CollisionBB(g_balloon, g_Bird))&&(g_Bird.activflg == true))
 	{
-		g_balloon.y += 2;
+		g_Bird.activflg = false;
 	}
 
 	/*プレイヤーが画面下に下がり過ぎると*/
 	if (g_balloon.y >= HEIGHT - g_balloon.scale - g_balloon.scale / 2)
 	{
    		g_balloon.y += 2;
+		g_balloon.y = 300.f;
 	}
 
 	/*プレイヤーが上に上がり過ぎると*/
 	if (g_balloon.y <= 0 + g_balloon.scale)
 	{
 		g_balloon.y += 2;
+		g_balloon.y = 300.f;
 	}
 }

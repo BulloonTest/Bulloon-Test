@@ -17,20 +17,24 @@ typedef struct _CUSTOMVERTEX
 
 enum TEXTURE
 {
+	/*　背景　*/
 	BACKGROUND_TEX,
 	BACKGROUND_TEX2,
-	BALLOON_TEX,
-	HORNET_TEX,
-	CLOUD_TEX,
-	GOAL_TEX,
-	THUNDER_TEX,
-	HP_TEX,
-	SCORE_TEX,
+	BALLOON_TEX,//風船
+	HORNET_TEX,//蜂
+	CLOUD_TEX,//雲
+	GOAL_TEX,//ゴール
+	THUNDER_TEX,//雷
+	HP_TEX,//体力
+	SCORE_TEX,//スコア
+	/*　カウントダウン　*/
 	COUNT3_TEX,
 	COUNT2_TEX,
 	COUNT1_TEX,
 	COUNTGO_TEX,
-	BIRD_TEX,
+	BIRD_TEX,//鳥
+	CUMULONIMBUS,//入道雲
+
 	TEXMAX
 };
 
@@ -45,5 +49,7 @@ extern IDirect3DDevice9*	  g_pD3Device;		//	Direct3Dのデバイス
 extern D3DPRESENT_PARAMETERS g_D3dPresentParameters;		//	パラメータ
 extern D3DDISPLAYMODE		  g_D3DdisplayMode;
 extern IDirect3D9*			  g_pDirect3D;		//	Direct3Dのインターフェイス
+
+extern int Scenemanagement;
 
 #endif

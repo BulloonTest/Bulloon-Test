@@ -77,6 +77,33 @@ void MakeVertex(CHARCTER_STATE Obj, CUSTOMVERTEX cv[])
 	Rotation(cv, Obj.ang);
 }
 
+void CreateVertex(float Topx, float Topy, float Height, float Whidth, TEXTURE texture_ID)
+{
+	CUSTOMVERTEX cv[4];
+
+	cv[0].x = Topx;
+	cv[0].y = Topy;
+	cv[1].x = Topx + Whidth;
+	cv[1].y = Topy;
+	cv[2].x = Topx + Whidth;;
+	cv[2].y = Topy + Height;
+	cv[3].x = Topx;
+	cv[3].y = Topy + Height;
+
+	for (int i = 0; i < 4; i++)
+	{
+		cv[i].z = 1.f;
+		cv[i].rhw = 1.f;
+		cv[i].color = 0xFFFFFFFF;
+	}
+
+	cv[0].tu = cv[0].tv = cv[1].tv = cv[3].tu = 0.f;
+	cv[1].tu = cv[2].tu = cv[2].tv = cv[3].tv = 1.f;
+
+	g_pD3Device->SetTexture(0, g_pTexture[texture_ID]);
+	g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, cv, sizeof(CUSTOMVERTEX));
+}
+
 void DrawVertex(CHARCTER_STATE Obj, TEXTURE texture_ID)
 {
 	CUSTOMVERTEX cv[4];

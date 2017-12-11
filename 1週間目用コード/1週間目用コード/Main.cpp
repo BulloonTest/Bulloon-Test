@@ -1,14 +1,20 @@
 #include<Windows.h>
 #include<d3dx9.h>
 #include<Xinput.h>
+#include<stdio.h>
 #include"Main.h"
 #include"Render.h"
 #include"Dinput.h"
+#include"Scene.h"
+#include<stdlib.h>
 #include"GameManager.h"
 
 #define TITLE TEXT ("Test")
 #define WIDTH	1280
 #define	HEIGHT	720
+
+#define MAP_WIDTH  90
+#define MAP_HEIGHT 10
 #define D3DFVF_CUSTOMVERTEX ( D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1)
 
 #pragma comment(lib,"winmm.lib")
@@ -22,7 +28,25 @@ D3DPRESENT_PARAMETERS g_D3dPresentParameters;		//	パラメータ
 D3DDISPLAYMODE		  g_D3DdisplayMode;
 IDirect3D9*			  g_pDirect3D;		//	Direct3Dのインターフェイス
 
-										/*ウィンドウプロシージャ*/
+int Scenemanagement = TITLE_SCENE;
+int map[MAP_HEIGHT][MAP_WIDTH];
+
+void MapLoad(const char* mapdata)
+{
+	FILE*  fp;
+	fopen_s(&fp, mapdata, "r");
+
+	for (int i = 0; i < MAP_HEIGHT; i++)
+	{
+		for (int j = 0; j < MAP_WIDTH; j++)
+		{
+			fscanf_s(fp, "%d,", &map[i][j], _countof(map));
+		}
+	}
+	fclose(fp);
+}
+
+							/*ウィンドウプロシージャ*/
 LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp)
 {
 	switch (msg)
@@ -108,8 +132,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInsta, LPSTR szStr, INT i
 		D3DCREATE_SOFTWARE_VERTEXPROCESSING,
 		&g_D3dPresentParameters, &g_pD3Device);
 
-	SetTexture();
 	LoadTexture();
+	SetTexture();
 
 	InitDinput();
 	InitDinputKey(hWnd);

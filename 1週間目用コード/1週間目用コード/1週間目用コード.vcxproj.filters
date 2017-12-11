@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\SceneManagement">
+      <UniqueIdentifier>{0580a3c5-30d2-4658-9e91-c3d3791041c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\SceneManagement\SceneDrawManagement">
+      <UniqueIdentifier>{1aff5cf4-96f2-4673-9757-254b359453c8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -63,7 +69,19 @@
     <ClCompile Include="CollisionManager.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="DraManager.cpp">
+    <ClCompile Include="DrawManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Nomal_Draw.cpp">
+      <Filter>ソース ファイル\SceneManagement\SceneDrawManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="Hard_Draw.cpp">
+      <Filter>ソース ファイル\SceneManagement\SceneDrawManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="Easy_Draw.cpp">
+      <Filter>ソース ファイル\SceneManagement\SceneDrawManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="Bonus.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -117,6 +135,12 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="DraManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Bonus.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
