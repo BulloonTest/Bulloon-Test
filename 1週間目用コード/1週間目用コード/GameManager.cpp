@@ -12,8 +12,12 @@
 #include"Bird.h"
 #include"CollisionManager.h"
 #include"DraManager.h"
-
-/*　プレイヤーのライフ変更の為のカウント　*/
+#include"Bonus.h"
+#include"HP.h"
+#include"Score.h"
+#include"GameManager.h"
+#include"Scene.h"
+#include"Recovery.h"
 
 /*最初の三秒間止めるためのカウント*/
 static int GameCount = 0;
@@ -21,28 +25,73 @@ static int GameCount = 0;
 /*　ここでゲームを動かしている　*/
 void ManagerRun()
 {
-	/*ここで1足していく*/
-	GameCount++;
-
-	/*3秒間過ぎると動き始める*/
-	if (GameCount > 200)
+	switch (Scenemanagement)
 	{
-		BalloonControl();
-		HornetControl();
-		BirdControl();
-		BackControl();
-		CloudControl();
-		Goalcountrol();
-		CountControl();
-		ManagerCollision();
-	}
+	case TITLE_SCENE:
+		DrawManager();
+		break;
+	case CHANGE_SCENE:
+		DrawManager();
+		break;
+	case EASY_SCENE:
+		/*ここで1足していく*/
+		GameCount++;
 
-	DrawManager();
+		/*　　初期化　*/
+		if (GameCount < 60)
+		{
+			CloudInit();
+			BirdInit();
+			EasyHornetInit();
+			EasyCoordinateInit();
+			EasyRecoveryInit();
+		}
 
-	/*カウントダウンは最初の３秒間経つと消えるように*/
-	if (GameCount < 210)
-	{
-		CountDraw();
+		/*3秒間過ぎると動き始める*/
+		if (GameCount > STARTCOUNT)
+		{
+			BalloonControl();
+			BirdControl();
+			HornetControl();
+			BackControl();
+			CloudControl();
+			Goalcountrol();
+		    RecoveryControl();
+			EasyBonusCountrol();
+			CountControl();
+			ManagerCollision();
+		}
+
+		DrawManager();
+
+		if (balloon_hp == 0)
+		{
+			Scenemanagement = OVER_SCENE;
+		}
+
+		/*カウントダウンは最初の３秒間経つと消えるように*/
+		if (GameCount < STARTCOUNT)
+		{
+			CountDraw();
+		}
+		else
+		{
+			ScoreRender(GameCount, BonusScore);
+		}
+		break;
+	case NOMAL_SCENE:
+		DrawManager();
+		break;
+	case HARD_SCENE:
+		DrawManager();
+		break;
+	case CLEAR_SCENE:
+		DrawManager();
+		FinalScore(GameCount, BonusScore, balloon_hp);
+		break;
+	case OVER_SCENE:
+		DrawManager();
+		break;
 	}
 
 }

@@ -2,6 +2,7 @@
 #include<d3dx9.h>
 #include<Xinput.h>
 #include<stdio.h>
+#include<dinput.h>
 #include"Main.h"
 #include"Render.h"
 #include"Dinput.h"
@@ -13,8 +14,6 @@
 #define WIDTH	1280
 #define	HEIGHT	720
 
-#define MAP_WIDTH  90
-#define MAP_HEIGHT 10
 #define D3DFVF_CUSTOMVERTEX ( D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1)
 
 #pragma comment(lib,"winmm.lib")
@@ -27,23 +26,59 @@ IDirect3DDevice9*	  g_pD3Device;		//	Direct3Dのデバイス
 D3DPRESENT_PARAMETERS g_D3dPresentParameters;		//	パラメータ
 D3DDISPLAYMODE		  g_D3DdisplayMode;
 IDirect3D9*			  g_pDirect3D;		//	Direct3Dのインターフェイス
+KEYSTATE Key[KEYMAX];
 
 int Scenemanagement = TITLE_SCENE;
-int map[MAP_HEIGHT][MAP_WIDTH];
 
-void MapLoad(const char* mapdata)
+void TitleChange()
 {
-	FILE*  fp;
-	fopen_s(&fp, mapdata, "r");
-
-	for (int i = 0; i < MAP_HEIGHT; i++)
+	switch (Scenemanagement)
 	{
-		for (int j = 0; j < MAP_WIDTH; j++)
+	case TITLE_SCENE:
+		KeyCheckDinput(&Key[SPACE], DIK_SPACE);
+		KeyCheckDinput(&Key[ESC], DIK_ESCAPE);
+
+		if (Key[SPACE] == PUSH)
 		{
-			fscanf_s(fp, "%d,", &map[i][j], _countof(map));
+			Scenemanagement = CHANGE_SCENE;
+			Key[SPACE] = OFF;
+		}
+		break;
+	case CHANGE_SCENE:
+		KeyCheckDinput(&Key[SPACE], DIK_SPACE);
+		KeyCheckDinput(&Key[E], DIK_E);
+		KeyCheckDinput(&Key[N], DIK_N);
+		KeyCheckDinput(&Key[H], DIK_H);
+		KeyCheckDinput(&Key[X], DIK_X);
+		KeyCheckDinput(&Key[T], DIK_T);
+		KeyCheckDinput(&Key[R], DIK_R);
+		KeyCheckDinput(&Key[A], DIK_A);
+
+		if (Key[E] == PUSH)
+		{
+			Scenemanagement = EASY_SCENE;
+			Key[E] = OFF;
+		}
+
+		else if (Key[N] == PUSH)
+		{
+			Scenemanagement = NOMAL_SCENE;
+			Key[N] = OFF;
+		}
+		else if (Key[H] == PUSH)
+		{
+			Scenemanagement = HARD_SCENE;
+			Key[H] = OFF;
+		}
+		break;
+	case EASY_SCENE:
+		KeyCheckDinput(&Key[E], DIK_E);
+		if (Key[E] == PUSH)
+		{
+			Scenemanagement = CLEAR_SCENE;
+			Key[E] = OFF;
 		}
 	}
-	fclose(fp);
 }
 
 							/*ウィンドウプロシージャ*/
@@ -168,6 +203,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInsta, LPSTR szStr, INT i
 				//描画の開始
 				g_pD3Device->BeginScene();
 
+				//タイトルの切り替え
+				TitleChange();
+				
 				//ゲーム処理
 				ManagerRun();
 

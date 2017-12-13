@@ -3,9 +3,11 @@
 
 #include"Main.h"
 
+extern CHARCTER_STATE g_EasyHornet[16];
+
+void EasyHornetInit();
 void HornetControl();
 
-extern CHARCTER_STATE g_hornet;
 
 
 #endif 

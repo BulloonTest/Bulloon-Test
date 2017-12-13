@@ -14,7 +14,7 @@ static float Gravity = 1.2;
 
 /*パラメーター*/
 // キャメルケースなら g_Balloon
-CHARCTER_STATE g_balloon = { 300.f,400.f,64.f, 0.f,true };
+CHARCTER_STATE g_balloon = { 100.f,400.f,64.f, 0.f,true };
 
 void BalloonControl()
 {
@@ -28,7 +28,6 @@ void BalloonControl()
 	/*重力を足していって下に落ちていくように*/
 	g_balloon.y += Gravity;
 
-	
 	// 押してる時と押してない時は同時で条件を満たさないので
 	// if elseに変更する
 	/*SPEACEボタンを押している間は浮く*/

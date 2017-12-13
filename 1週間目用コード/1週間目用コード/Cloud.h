@@ -1,9 +1,10 @@
 #ifndef CLOUD_H
 #define	CLOUD_H
 
-void CloudControl();
+extern CHARCTER_STATE g_EasyCloud[9];
+extern CHARCTER_STATE g_EasyThunder[9];
 
-extern CHARCTER_STATE g_Cloud ;
-extern CHARCTER_STATE g_Thunder;
+void CloudControl();
+void CloudInit();
 
 #endif

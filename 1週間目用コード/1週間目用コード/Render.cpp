@@ -54,6 +54,17 @@ void LoadTexture()
 	CreateTexture("カウントダウン2.png", COUNT2_TEX);
 	CreateTexture("カウントダウン1.png", COUNT1_TEX);
 	CreateTexture("カウントダウン0.png", COUNTGO_TEX);
+	CreateTexture("ボーナスアイテム小.png", BONUS_SMAIL_TEX);
+	CreateTexture("ボーナスアイテム中.png", BONUS_M_TEX);
+	CreateTexture("ボーナスアイテム大.png", BONUS_BIG_TEX);
+	CreateTexture("風船アイコン１.png", HP1_TEX);
+	CreateTexture("風船アイコン２.png", HP2_TEX);
+	CreateTexture("Score.png", SCORE_TEX);
+	CreateTexture("タイトル.png", TITLE_TEX);
+	CreateTexture("選択画面.png", CHANGE_TEX);
+	CreateTexture("ゲームクリア.png", CLEAR_TEX);
+	CreateTexture("ゲームオーバー.png", GAMEOVER_TEX);
+	CreateTexture("風船2.png", RECOVERY_TEX);
 }
 
 void MakeVertex(CHARCTER_STATE Obj, CUSTOMVERTEX cv[])

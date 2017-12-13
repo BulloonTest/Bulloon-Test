@@ -6,18 +6,39 @@
 #include"Cloud.h"
 
 #define GAMESPEED 1.5
-
-CHARCTER_STATE g_Cloud = { 1400.f,150.f,128.f, 0.f ,true };
-CHARCTER_STATE g_Thunder = { g_Cloud.x,g_Cloud.y + 105.f,64.f, 0.f ,true };
+#define EASYCLOUD 9
 
 CHARCTER_STATE g_EasyCloud[9];
 CHARCTER_STATE g_EasyThunder[9];
 
-static int TimeCount = 0;
-static int LoadCount = 0;
+void CloudInit()
+{
+	/* EasyMood */
+	g_EasyCloud[0] = { 7424.f,72.f,64.f, 0.f ,true };
+	g_EasyCloud[1] = { 7552.f,72.f,64.f, 0.f ,true };
+	g_EasyCloud[2] = { 7680.f,72.f,64.f, 0.f ,true };
+	g_EasyCloud[3] = { 7808.f,72.f,64.f, 0.f ,true };
+	g_EasyCloud[4] = { 8576.f,360.f,64.f, 0.f ,true };
+	g_EasyCloud[5] = { 8704.f,360.f,64.f, 0.f ,true };
+	g_EasyCloud[6] = { 8832.f,360.f,64.f, 0.f ,true };
+	g_EasyCloud[7] = { 8960.f,360.f,64.f, 0.f ,true };
+	g_EasyCloud[8] = { 9088.f,360.f,64.f, 0.f ,true };
+	g_EasyThunder[0] = { 7424.f,177.f,64.f, 0.f ,true };
+	g_EasyThunder[1] = { 7552.f,177.f,64.f, 0.f ,true };
+	g_EasyThunder[2] = { 7680.f,177.f,64.f, 0.f ,true };
+	g_EasyThunder[3] = { 7808.f,177.f,64.f, 0.f ,true };
+	g_EasyThunder[4] = { 8576.f,465.f,64.f, 0.f ,true };
+	g_EasyThunder[5] = { 8704.f,465.f,64.f, 0.f ,true };
+	g_EasyThunder[6] = { 8832.f,465.f,64.f, 0.f ,true };
+	g_EasyThunder[7] = { 8960.f,465.f,64.f, 0.f ,true };
+	g_EasyThunder[8] = { 9088.f,465.f,64.f, 0.f ,true };
+}
 
 void CloudControl()
 {
-	g_Cloud .x -= GAMESPEED;
-	g_Thunder.x -= GAMESPEED;
+	for (int i = 0; i < EASYCLOUD; i++)
+	{
+		g_EasyCloud[i].x -= GAMESPEED;
+		g_EasyThunder[i].x -= GAMESPEED;
+	}
 }

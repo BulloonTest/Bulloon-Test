@@ -33,8 +33,17 @@ enum TEXTURE
 	COUNT1_TEX,
 	COUNTGO_TEX,
 	BIRD_TEX,//鳥
-	CUMULONIMBUS,//入道雲
-
+	CUMULONIMBUS_TEX,//入道雲
+	BONUS_SMAIL_TEX,//小ボーナス
+	BONUS_M_TEX,//中ボーナス
+	BONUS_BIG_TEX,//大ボーナス
+	HP1_TEX,
+	HP2_TEX,//体力
+	TITLE_TEX,//タイトル
+	CHANGE_TEX,//選択画面
+	CLEAR_TEX,//ゲームクリア
+	GAMEOVER_TEX,//ゲームオーバー
+	RECOVERY_TEX,//回復アイテム
 	TEXMAX
 };
 

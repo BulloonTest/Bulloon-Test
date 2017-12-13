@@ -10,35 +10,49 @@
 #include"Countdown.h"
 #include"CollisionJudgment.h"
 #include"Bird.h"
-
-/*　雷を出すカウント　*/
-static int TimeCount = 0;
-static int LoadCount = 0;
+#include"Bonus.h"
+#include"EasyDraw.h"
+#include"Scene.h"
+#include"Title.h"
+#include"ChangeScene.h"
+#include"Clear.h"
+#include"Over.h"
+#include"Score.h"
 
 /*　ここで全ての画像を生成と描画をしている　注意：置く順番に注意をする事　*/
 void DrawManager()
 {
-	CUSTOMVERTEX cv[4];
-
-	TimeCount++;
-
-	BackDraw();
-	DrawVertex(g_hornet, HORNET_TEX);
-	DrawVertex(g_Bird, BIRD_TEX);
-	DrawVertex(g_Goal, GOAL_TEX);
-	DrawVertex(g_balloon, BALLOON_TEX);
-	DrawVertex(g_Cloud, CLOUD_TEX);
-
-	if (TimeCount > 180)
+	switch (Scenemanagement)
 	{
-		LoadCount++;
-
-		DrawVertex(g_Thunder, THUNDER_TEX);
-
-		if (LoadCount > 60)
-		{
-			TimeCount = 0;
-			LoadCount = 0;
-		}
+	case TITLE_SCENE:
+		TitleDraw();
+		break;
+	case CHANGE_SCENE:
+		ChangeDraw();
+		break;
+	case EASY_SCENE:
+		EasyDraw();
+		break;
+	case NOMAL_SCENE:
+		break;
+	case HARD_SCENE:
+		break;
+	case CLEAR_SCENE:
+		ClearDraw();
+		break;
+	case OVER_SCENE:
+		OverDraw();
+		break;
 	}
+
 }
+//
+//enum SCENE_LIST
+//{
+//	TITLE_SCENE,
+//	EASY_SCENE,
+//	NOMAL_SCENE,
+//	HARD_SCENE,
+//	EXTRA_SCENE,
+//	MAX_SCENE,
+//};
