@@ -34,7 +34,7 @@ void ManagerCollision()
 	//EasyMood‚Ì‚Ì”»’è	
 
 	/*ƒvƒŒƒCƒ„[‚Æ–I*/
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 16; i++)
 	{
 		if ((CollisionBB(g_balloon, g_EasyHornet[i])) && (g_EasyHornet[i].activflg == true))
 		{

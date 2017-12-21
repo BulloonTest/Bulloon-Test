@@ -1,3 +1,5 @@
+//カラスはCrow　名前を後で全部変える
+
 #include<Windows.h>
 #include<d3d9.h>
 #include"Main.h"
@@ -8,6 +10,7 @@ CHARCTER_STATE g_EasyBird[16];
 
 void BirdInit()
 {
+	//EasyMoodのカラス
 	g_EasyBird[0]  = { 896.f,  360.f,64.f,0.f,true };
 	g_EasyBird[1]  = { 1408.f,  216.f,64.f,0.f,true };
 	g_EasyBird[2]  = { 1536.f,  288.f,64.f,0.f,true };

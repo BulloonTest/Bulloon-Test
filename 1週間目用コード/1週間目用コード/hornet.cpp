@@ -25,12 +25,12 @@ void EasyHornetInit()
 	g_EasyHornet[7]  = { 19984.f,504.f,64.f, 0.f,true };
 	g_EasyHornet[8]  = { 24096.f,576.f,64.f, 0.f,true };
 	g_EasyHornet[9]  = { 25376.f,576.f,64.f, 0.f,true };
-	g_EasyHornet[10] = { 29600.f,648.f,64.f, 0.f,true };
-	g_EasyHornet[11] = { 29984.f,648.f,64.f, 0.f,true };
-	g_EasyHornet[12] = { 30096.f,648.f,64.f, 0.f,true };
-	g_EasyHornet[13] = { 30376.f,648.f,64.f, 0.f,true };
-	g_EasyHornet[14] = { 30600.f,720.f,64.f, 0.f,true };
-	g_EasyHornet[15] = { 30984.f,720.f,64.f, 0.f,true };
+	g_EasyHornet[10] = { 29600.f,360.f,64.f, 0.f,true };
+	g_EasyHornet[11] = { 29984.f,360.f,64.f, 0.f,true };
+	g_EasyHornet[12] = { 30096.f,144.f,64.f, 0.f,true };
+	g_EasyHornet[13] = { 30376.f,400.f,64.f, 0.f,true };
+	g_EasyHornet[14] = { 30600.f,400.f,64.f, 0.f,true };
+	g_EasyHornet[15] = { 30984.f,144.f,64.f, 0.f,true };
 }
 
 void HornetControl()
@@ -56,9 +56,16 @@ void HornetControl()
 		}
 	}
 
-	if (count > 130)
+	if (count > 120)
 	{
 		count = 0;
 	}
 
+	for (int i = 0; i < 16; i++)
+	{
+		if (g_EasyHornet[i].y < 0)
+		{
+ 			g_EasyHornet[i].y = 720.f;
+		}
+	}
 }

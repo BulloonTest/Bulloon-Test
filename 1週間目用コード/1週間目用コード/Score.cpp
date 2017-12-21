@@ -58,7 +58,7 @@ void FinalScore(int GameCnt, float GameBonus,int Hp)
 	int score;
 	int degit;
 
-	score = (GameCnt - STARTCOUNT) / 60 * 10 + GameBonus + Hp;
+	score = (GameCnt - STARTCOUNT) / 60 * 10 + GameBonus + (Hp * 10000);
 
 	for (int i = 0; i < 10; i++)
 	{

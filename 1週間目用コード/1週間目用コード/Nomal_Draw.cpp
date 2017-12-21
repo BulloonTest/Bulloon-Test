@@ -9,3 +9,4 @@
 #include"CollisionJudgment.h"
 #include"Bird.h"
 
+/*‹ó‚Ìƒtƒ@ƒCƒ‹*/

@@ -22,15 +22,9 @@ void EasyDraw()
 	TimeCount++;
 
 	BackDraw();
-	DrawVertex(g_balloon, BALLOON_TEX);
 	DrawVertex(g_Goal, GOAL_TEX);
-	UI_Draw();
 
 	/*マジックナンバーをなくすように*/
-	for (int i = 0; i < 16; i++)
-	{
-		DrawVertex(g_EasyBird[i], BIRD_TEX);
-	}
 
 	for (int i = 0; i < 9; i++)
 	{
@@ -85,4 +79,13 @@ void EasyDraw()
 	{
 		DrawVertex(g_EasyHornet[i], HORNET_TEX);
 	}
+
+	for (int i = 0; i < 16; i++)
+	{
+		DrawVertex(g_EasyBird[i], BIRD_TEX);
+	}
+
+	DrawVertex(g_balloon, BALLOON_TEX);
+
+	UI_Draw();
 }

@@ -19,6 +19,18 @@
     <Filter Include="ソース ファイル\SceneManagement\SceneDrawManagement">
       <UniqueIdentifier>{1aff5cf4-96f2-4673-9757-254b359453c8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\SceneManagement\SceneRun">
+      <UniqueIdentifier>{df4d00c7-0fd9-4083-b84f-bcc13f0a8cbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{fb623b80-8ba4-4930-8755-1b7997a45b7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\GameManager">
+      <UniqueIdentifier>{d56302e1-f455-43cc-bf21-d14d90ad1bcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\GameManager\DrawManager">
+      <UniqueIdentifier>{c10a72ca-f38b-4a8f-8c9e-d20f658f5412}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -99,6 +111,18 @@
     <ClCompile Include="Recovery.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="EasyRun.cpp">
+      <Filter>ソース ファイル\SceneManagement\SceneRun</Filter>
+    </ClCompile>
+    <ClCompile Include="NomalRun.cpp">
+      <Filter>ソース ファイル\SceneManagement\SceneRun</Filter>
+    </ClCompile>
+    <ClCompile Include="ClearRun.cpp">
+      <Filter>ソース ファイル\SceneManagement\SceneRun</Filter>
+    </ClCompile>
+    <ClCompile Include="HardRun.cpp">
+      <Filter>ソース ファイル\SceneManagement\SceneRun</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
@@ -175,6 +199,12 @@
     </ClInclude>
     <ClInclude Include="Recovery.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="EasyRun.h">
+      <Filter>ソース ファイル\SceneManagement\SceneRun</Filter>
+    </ClInclude>
+    <ClInclude Include="ClearRun.h">
+      <Filter>ソース ファイル\SceneManagement\SceneRun</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

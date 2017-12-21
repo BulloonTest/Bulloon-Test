@@ -78,6 +78,7 @@ void EasyCoordinateInit()
 
 void HardCoordinateInit()
 {
+	//HardMoodのボーナスアイテム小
 	g_HardBonus_Small[0]  = {  512.f,  360.f,64.f,0.f,true };
 	g_HardBonus_Small[1]  = {  768.f,  360.f,64.f,0.f,true };
 	g_HardBonus_Small[2]  = {  896.f,  288.f,64.f,0.f,true };

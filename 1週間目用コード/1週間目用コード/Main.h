@@ -47,6 +47,7 @@ enum TEXTURE
 	TEXMAX
 };
 
+/*パラメーターって言う d3dvector3を作る */
 typedef struct _CHARCTER_STATE
 {
 	float x, y, scale, ang;
