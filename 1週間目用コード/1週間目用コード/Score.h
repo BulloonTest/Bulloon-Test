@@ -8,7 +8,8 @@
 
 #define UI_SCORE_D	40	//1åÖÇÃïù
 
-enum DRAWDIRECT {
+enum DRAWDIRECT
+{
 	NOR,
 	REV,
 };

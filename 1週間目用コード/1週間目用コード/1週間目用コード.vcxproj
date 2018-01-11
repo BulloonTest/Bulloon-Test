@@ -191,9 +191,11 @@
     <ClInclude Include="EasyRun.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Goal.h" />
+    <ClInclude Include="Hard_Draw.h" />
     <ClInclude Include="hornet.h" />
     <ClInclude Include="HP.h" />
     <ClInclude Include="Main.h" />
+    <ClInclude Include="Nomal_Draw.h" />
     <ClInclude Include="Over.h" />
     <ClInclude Include="Recovery.h" />
     <ClInclude Include="Rotation.h" />

@@ -2,8 +2,9 @@
 #include<d3d9.h>
 #include"Main.h"
 
-
 CHARCTER_STATE g_EasyRecovery[4];
+CHARCTER_STATE g_NormalRecovery[8];
+CHARCTER_STATE g_HardRecovery[8];
 
 void EasyRecoveryInit()
 {

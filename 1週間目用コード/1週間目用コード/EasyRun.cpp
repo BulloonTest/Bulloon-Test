@@ -31,8 +31,8 @@ void EasyRun()
 	/*@@‰Šú‰»@*/
 	if (GameCount < 60)
 	{
-		CloudInit();
-		BirdInit();
+		EasyCloudInit();
+		EasyBirdInit();
 		EasyHornetInit();
 		EasyCoordinateInit();
 		EasyRecoveryInit();

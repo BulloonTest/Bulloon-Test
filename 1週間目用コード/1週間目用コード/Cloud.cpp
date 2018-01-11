@@ -11,18 +11,25 @@
 CHARCTER_STATE g_EasyCloud[9];
 CHARCTER_STATE g_EasyThunder[9];
 
-void CloudInit()
+CHARCTER_STATE g_NormalCloud[24];
+CHARCTER_STATE g_NormalThunder[24];
+
+CHARCTER_STATE g_HardCloud[14];
+CHARCTER_STATE g_HardThunder[14];
+
+void EasyCloudInit()
 {
 	/* EasyMood */
-	g_EasyCloud[0]   = { 7424.f,72.f,64.f, 0.f ,true };
-	g_EasyCloud[1]   = { 7552.f,72.f,64.f, 0.f ,true };
-	g_EasyCloud[2]   = { 7680.f,72.f,64.f, 0.f ,true };
-	g_EasyCloud[3]   = { 7808.f,72.f,64.f, 0.f ,true };
-	g_EasyCloud[4]   = { 8576.f,360.f,64.f, 0.f ,true };
-	g_EasyCloud[5]   = { 8704.f,360.f,64.f, 0.f ,true };
-	g_EasyCloud[6]   = { 8832.f,360.f,64.f, 0.f ,true };
-	g_EasyCloud[7]   = { 8960.f,360.f,64.f, 0.f ,true };
-	g_EasyCloud[8]   = { 9088.f,360.f,64.f, 0.f ,true };
+	g_EasyCloud[0]   = { 7424.f,72.f, 96.f, 0.f ,true };
+	g_EasyCloud[1]   = { 7552.f,72.f, 96.f, 0.f ,true };
+	g_EasyCloud[2]   = { 7680.f,72.f, 96.f, 0.f ,true };
+	g_EasyCloud[3]   = { 7808.f,72.f, 96.f, 0.f ,true };
+	g_EasyCloud[4]   = { 8576.f,360.f,96.f, 0.f ,true };
+	g_EasyCloud[5]   = { 8704.f,360.f,96.f, 0.f ,true };
+	g_EasyCloud[6]   = { 8832.f,360.f,96.f, 0.f ,true };
+	g_EasyCloud[7]   = { 8960.f,360.f,96.f, 0.f ,true };
+	g_EasyCloud[8]   = { 9088.f,360.f,96.f, 0.f ,true };
+
 	g_EasyThunder[0] = { 7424.f,177.f,64.f, 0.f ,true };
 	g_EasyThunder[1] = { 7552.f,177.f,64.f, 0.f ,true };
 	g_EasyThunder[2] = { 7680.f,177.f,64.f, 0.f ,true };
@@ -32,6 +39,16 @@ void CloudInit()
 	g_EasyThunder[6] = { 8832.f,465.f,64.f, 0.f ,true };
 	g_EasyThunder[7] = { 8960.f,465.f,64.f, 0.f ,true };
 	g_EasyThunder[8] = { 9088.f,465.f,64.f, 0.f ,true };
+}
+
+void NormalCloudInit()
+{
+
+}
+
+void HardCloudInit()
+{
+
 }
 
 void CloudControl()

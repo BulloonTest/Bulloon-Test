@@ -7,8 +7,10 @@
 #define BIRDSPEED 4
 
 CHARCTER_STATE g_EasyBird[16];
+CHARCTER_STATE g_NormalBird[30];
+CHARCTER_STATE g_HardBird[25];
 
-void BirdInit()
+void EasyBirdInit()
 {
 	//EasyMood‚ÌƒJƒ‰ƒX
 	g_EasyBird[0]  = { 896.f,  360.f,64.f,0.f,true };
@@ -27,6 +29,16 @@ void BirdInit()
 	g_EasyBird[13] = { 10368.f, 504.f,64.f,0.f,true };
 	g_EasyBird[14] = { 10496.f, 144.f,64.f,0.f,true };
 	g_EasyBird[15] = { 10496.f, 432.f,64.f,0.f,true };
+}
+
+void NormalBirdInit()
+{
+
+}
+
+void HardBirdInit()
+{
+
 }
 
 void BirdControl()

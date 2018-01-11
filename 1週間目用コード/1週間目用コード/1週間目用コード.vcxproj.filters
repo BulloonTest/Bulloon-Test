@@ -206,5 +206,11 @@
     <ClInclude Include="ClearRun.h">
       <Filter>ソース ファイル\SceneManagement\SceneRun</Filter>
     </ClInclude>
+    <ClInclude Include="Nomal_Draw.h">
+      <Filter>ソース ファイル\SceneManagement\SceneDrawManagement</Filter>
+    </ClInclude>
+    <ClInclude Include="Hard_Draw.h">
+      <Filter>ソース ファイル\SceneManagement\SceneDrawManagement</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

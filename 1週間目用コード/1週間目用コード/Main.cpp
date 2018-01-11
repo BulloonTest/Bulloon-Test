@@ -182,7 +182,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInsta, LPSTR szStr, INT i
 	ZeroMemory(&msg, sizeof(msg));		//&msgの初期化
 	while (msg.message != WM_QUIT)		//WM_QUIT(終了)メッセージが来るまで継続
 	{
-		Sleep(1);						//高速で回らないように1ms(0.001秒)処理を遅らせている
+		//Sleep(1);						//高速で回らないように1ms(0.001秒)処理を遅らせている
 		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))	//PeekMessageでメッセージが来ていないか確認して来ていたら入る
 		{
 			TranslateMessage(&msg);		//メッセージをProcが読めるように翻訳する

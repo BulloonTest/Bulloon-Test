@@ -5,6 +5,7 @@
 #include"main.h"
 #include"Rotation.h"
 
+//RenderStateの設定をここで
 void SetTexture()
 {
 	/*ここを徹底的に勉強する事*/
@@ -19,7 +20,7 @@ void SetTexture()
 	g_pD3Device->SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
 }
 
-
+//FromFileをここで関数化させました
 void CreateTexture(const char* text, TEXTURE texture_ID)
 {
 	D3DXCreateTextureFromFileEx(
@@ -68,6 +69,7 @@ void LoadTexture()
 	CreateTexture("Texture/ゴールライン.png", GOAL_TEX);
 }
 
+//描画はしない：分けとく
 void MakeVertex(CHARCTER_STATE Obj, CUSTOMVERTEX cv[])
 {
 	cv[0].x = cv[3].x = Obj.x - Obj.scale;
@@ -89,6 +91,7 @@ void MakeVertex(CHARCTER_STATE Obj, CUSTOMVERTEX cv[])
 	Rotation(cv, Obj.ang);
 }
 
+//描画だけ
 void CreateVertex(float Topx, float Topy, float Height, float Whidth, TEXTURE texture_ID)
 {
 	CUSTOMVERTEX cv[4];
@@ -116,6 +119,7 @@ void CreateVertex(float Topx, float Topy, float Height, float Whidth, TEXTURE te
 	g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, cv, sizeof(CUSTOMVERTEX));
 }
 
+//回転させて尚且つ描画も一緒に
 void DrawVertex(CHARCTER_STATE Obj, TEXTURE texture_ID)
 {
 	CUSTOMVERTEX cv[4];
@@ -142,6 +146,20 @@ void DrawVertex(CHARCTER_STATE Obj, TEXTURE texture_ID)
 	g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, cv, sizeof(CUSTOMVERTEX));
 }
 
+
+//複数表示させる時用
+void Draws(int s, CHARCTER_STATE* n, TEXTURE m)
+{
+	for (int i = 0; i < s; i++)
+	{
+		if (n[i].activflg == true)
+		{
+			DrawVertex(n[i], m);
+		}
+	}
+}
+
+/*　ここは使うべき　*/
 void TexSet(IDirect3DDevice9* pD3Device, LPDIRECT3DTEXTURE9 pTexture)
 {
 	g_pD3Device->SetTexture(0, pTexture);

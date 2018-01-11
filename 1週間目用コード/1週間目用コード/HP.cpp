@@ -31,8 +31,6 @@ void MakeVertex(CUSTOMVERTEX* cv, float w, float h)
 	cv[2].tv = cv[3].tv = 1.0f;
 }
 
-
-
 void SetVertexPos(CUSTOMVERTEX* result, float x, float y, float w, float h, float size)
 {
 	float dw, dh;

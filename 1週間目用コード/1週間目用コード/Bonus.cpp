@@ -6,11 +6,20 @@
 #define EASYBONUS_B 6
 #define HARDBONUS_S 32
 
+//Ea
 CHARCTER_STATE g_EasyBonus_Small[34];
 CHARCTER_STATE g_EasyBonus_M[15];
 CHARCTER_STATE g_EasyBonus_Big[6];
 
+//Nomal
+CHARCTER_STATE g_NormalBonus_Small[30];
+CHARCTER_STATE g_NormalBonus_M[17];
+CHARCTER_STATE g_NormalBonus_Big[12];
+
+//Hard
 CHARCTER_STATE g_HardBonus_Small[32];
+CHARCTER_STATE g_HardBonus_M[14];
+CHARCTER_STATE g_HardBonus_Big[11];
 
 void EasyCoordinateInit()
 {
@@ -74,6 +83,11 @@ void EasyCoordinateInit()
 	g_EasyBonus_Big[3] = { 8320.f,  432.f,64.f,0.f,true };
 	g_EasyBonus_Big[4] = { 10752.F, 288.f,64.f,0.f,true };
 	g_EasyBonus_Big[5] = { 11392.f, 288.f,64.f,0.f,true };
+}
+
+void NormalCoordinateInit()
+{
+	//Nomalmoodのボーナスアイテム小
 }
 
 void HardCoordinateInit()

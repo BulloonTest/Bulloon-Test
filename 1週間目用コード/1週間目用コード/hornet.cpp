@@ -10,6 +10,8 @@
 #define EASYHORNET 16
 
 CHARCTER_STATE g_EasyHornet[16];
+CHARCTER_STATE g_NormalHornet[5];
+CHARCTER_STATE g_HardHornet[5];
 
 static int count = 0;
 
@@ -31,6 +33,16 @@ void EasyHornetInit()
 	g_EasyHornet[13] = { 30376.f,400.f,64.f, 0.f,true };
 	g_EasyHornet[14] = { 30600.f,400.f,64.f, 0.f,true };
 	g_EasyHornet[15] = { 30984.f,144.f,64.f, 0.f,true };
+}
+
+void NormalHornetInit()
+{
+
+}
+
+void HardHornetInit()
+{
+
 }
 
 void HornetControl()

@@ -19,6 +19,8 @@ void Rotation(CUSTOMVERTEX* pObj,float angle)
 
 	for (int i = 0; i < 4; i++)
 	{
+		//‚±‚±‚ð•·‚­
+		//Œ´“_‚É–ß‚µ‚Ä‚¢‚éH
 		temp_x = pObj[i].x - cx;
 		temp_y = pObj[i].y - cy;
 
