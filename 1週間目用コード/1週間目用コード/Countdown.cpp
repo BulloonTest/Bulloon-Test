@@ -6,13 +6,13 @@
 
 #define GAMESPEED 1.5
 
-static int GameCount = 0;
+static int TimeCount = 0;
 
 CHARCTER_STATE g_count = { 640.f,360.f,128.f, 0.f,true };
 
 void CountDraw()
 {
-	GameCount++;
+	TimeCount++;
 
 	CUSTOMVERTEX count[]
 	{
@@ -23,25 +23,25 @@ void CountDraw()
 	};
 
 	/*âûã}èàíuÇ»ÇÃÇ≈å„Ç≈íºÇ∑éñ*/
-	if (GameCount < 60)
+	if (TimeCount < 60)
 	{
 		g_pD3Device->SetTexture(0, g_pTexture[COUNT3_TEX]);	
 	}
-	else if (GameCount < 120)
+	else if (TimeCount < 120)
 	{
 		g_pD3Device->SetTexture(0, g_pTexture[COUNT2_TEX]);		
 	}
-	else if (GameCount < 170)
+	else if (TimeCount < 170)
 	{
 		g_pD3Device->SetTexture(0, g_pTexture[COUNT1_TEX]);
 	}
 
-	else if (GameCount > 180)
+	else if (TimeCount > 180)
 	{
 		g_pD3Device->SetTexture(0, g_pTexture[COUNTGO_TEX]);
 	}
 
-	if (!(GameCount >= 170) || !(GameCount <= 180))
+	if (!(TimeCount >= 170) || !(TimeCount <= 180))
 	{
 		g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, count, sizeof(CUSTOMVERTEX));
 	}

@@ -43,12 +43,88 @@ void EasyCloudInit()
 
 void NormalCloudInit()
 {
+	g_NormalCloud[0];
+	g_NormalCloud[1];
+	g_NormalCloud[2];
+	g_NormalCloud[3];
+	g_NormalCloud[4];
+	g_NormalCloud[5];
+	g_NormalCloud[6];
+	g_NormalCloud[7];
+	g_NormalCloud[8];
+	g_NormalCloud[9];
+	g_NormalCloud[10];
+	g_NormalCloud[11];
+	g_NormalCloud[12];
+	g_NormalCloud[13];
+	g_NormalCloud[14];
+	g_NormalCloud[15];
+	g_NormalCloud[16];
+	g_NormalCloud[17];
+	g_NormalCloud[18];
+	g_NormalCloud[19];
+	g_NormalCloud[20];
+	g_NormalCloud[21];
+	g_NormalCloud[22];
+	g_NormalCloud[23];
 
+	g_NormalThunder[0];
+	g_NormalThunder[1];
+	g_NormalThunder[2];
+	g_NormalThunder[3];
+	g_NormalThunder[4];
+	g_NormalThunder[5];
+	g_NormalThunder[6];
+	g_NormalThunder[7];
+	g_NormalThunder[8];
+	g_NormalThunder[9];
+	g_NormalThunder[10];
+	g_NormalThunder[11];
+	g_NormalThunder[12];
+	g_NormalThunder[13];
+	g_NormalThunder[14];
+	g_NormalThunder[15];
+	g_NormalThunder[16];
+	g_NormalThunder[17];
+	g_NormalThunder[18];
+	g_NormalThunder[19];
+	g_NormalThunder[20];
+	g_NormalThunder[21];
+	g_NormalThunder[22];
+	g_NormalThunder[23];
 }
 
 void HardCloudInit()
 {
+	g_HardCloud[0];
+	g_HardCloud[1];
+	g_HardCloud[2];
+	g_HardCloud[3];
+	g_HardCloud[4];
+	g_HardCloud[5];
+	g_HardCloud[6];
+	g_HardCloud[7];
+	g_HardCloud[8];
+	g_HardCloud[9];
+	g_HardCloud[10];
+	g_HardCloud[11];
+	g_HardCloud[12];
+	g_HardCloud[13];
 
+	g_HardThunder[0];
+	g_HardThunder[1];
+	g_HardThunder[2];
+	g_HardThunder[3];
+	g_HardThunder[4];
+	g_HardThunder[5];
+	g_HardThunder[6];
+	g_HardThunder[7];
+	g_HardThunder[8];
+	g_HardThunder[9];
+	g_HardThunder[10];
+	g_HardThunder[11];
+	g_HardThunder[12];
+	g_HardThunder[13];
 }
 
 void CloudControl()

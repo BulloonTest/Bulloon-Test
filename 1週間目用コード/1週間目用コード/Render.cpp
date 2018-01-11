@@ -46,9 +46,12 @@ void LoadTexture()
 	g_pD3Device->SetFVF(D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1);
 	CreateTexture("Texture/”wŒi(’‹).png", BACKGROUND_TEX);
 	CreateTexture("Texture/”wŒi(’‹).png", BACKGROUND_TEX2);
+	CreateTexture("Texture/”wŒi(—[).png", BACKGROUND_TEX3);
+	CreateTexture("Texture/”wŒi(–é).png", BACKGROUND_TEX4);
 	CreateTexture("Texture/ƒvƒŒƒCƒ„[.png", BALLOON_TEX);
 	CreateTexture("Texture/–I2.png", HORNET_TEX);
 	CreateTexture("Texture/’¹.png", BIRD_TEX);
+	CreateTexture("Texture/’¹1.png", BIRD1_TEX);
 	CreateTexture("Texture/—‹‰_2.png", CLOUD_TEX);
 	CreateTexture("Texture/—‹2.png", THUNDER_TEX);
 	CreateTexture("Texture/ƒJƒEƒ“ƒgƒ_ƒEƒ“3.png", COUNT3_TEX);

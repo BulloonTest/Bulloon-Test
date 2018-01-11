@@ -21,7 +21,7 @@
 #include"EasyRun.h"
 
 /*最初の三秒間止めるためのカウント*/
-static int GameCount = 0;
+int GameCount = 0;
 
 void EasyRun()
 {

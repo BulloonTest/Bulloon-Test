@@ -87,7 +87,71 @@ void EasyCoordinateInit()
 
 void NormalCoordinateInit()
 {
-	//Nomalmoodのボーナスアイテム小
+	//Nomalのボーナスアイテム小
+	g_NormalBonus_Small[0];
+	g_NormalBonus_Small[1];
+	g_NormalBonus_Small[2];
+	g_NormalBonus_Small[3];
+	g_NormalBonus_Small[4];
+	g_NormalBonus_Small[5];
+	g_NormalBonus_Small[6];
+	g_NormalBonus_Small[7];
+	g_NormalBonus_Small[8];
+	g_NormalBonus_Small[9];
+	g_NormalBonus_Small[10];
+	g_NormalBonus_Small[11];
+	g_NormalBonus_Small[12];
+	g_NormalBonus_Small[13];
+	g_NormalBonus_Small[14];
+	g_NormalBonus_Small[15];
+	g_NormalBonus_Small[16];
+	g_NormalBonus_Small[17];
+	g_NormalBonus_Small[18];
+	g_NormalBonus_Small[19];
+	g_NormalBonus_Small[20];
+	g_NormalBonus_Small[21];
+	g_NormalBonus_Small[22];
+	g_NormalBonus_Small[23];
+	g_NormalBonus_Small[24];
+	g_NormalBonus_Small[25];
+	g_NormalBonus_Small[26];
+	g_NormalBonus_Small[27];
+	g_NormalBonus_Small[28];
+	g_NormalBonus_Small[29];
+	g_NormalBonus_Small[30];
+
+	//Nomalのボーナスアイテム中
+	g_NormalBonus_M[0];
+	g_NormalBonus_M[1];
+	g_NormalBonus_M[2];
+	g_NormalBonus_M[3];
+	g_NormalBonus_M[4];
+	g_NormalBonus_M[5];
+	g_NormalBonus_M[6];
+	g_NormalBonus_M[7];
+	g_NormalBonus_M[8];
+	g_NormalBonus_M[9];
+	g_NormalBonus_M[10];
+	g_NormalBonus_M[11];
+	g_NormalBonus_M[12];
+	g_NormalBonus_M[13];
+	g_NormalBonus_M[14];
+	g_NormalBonus_M[15];
+	g_NormalBonus_M[16];
+
+	//Nomalのボーナスアイテム大
+	g_NormalBonus_Big[0];
+	g_NormalBonus_Big[1];
+	g_NormalBonus_Big[2];
+	g_NormalBonus_Big[3];
+	g_NormalBonus_Big[4];
+	g_NormalBonus_Big[5];
+	g_NormalBonus_Big[6];
+	g_NormalBonus_Big[7];
+	g_NormalBonus_Big[8];
+	g_NormalBonus_Big[9];
+	g_NormalBonus_Big[10];
+	g_NormalBonus_Big[11];
 }
 
 void HardCoordinateInit()
@@ -125,6 +189,35 @@ void HardCoordinateInit()
 	g_HardBonus_Small[29] = { 9856.f, 144.f,64.f,0.f,true };
 	g_HardBonus_Small[30] = { 9984.f, 144.f,64.f,0.f,true };
 	g_HardBonus_Small[31] = { 10752.f,288.f,64.f,0.f,true };
+
+	//Hardアイテム中
+	g_HardBonus_M[0];
+	g_HardBonus_M[1];
+	g_HardBonus_M[2];
+	g_HardBonus_M[3];
+	g_HardBonus_M[4];
+	g_HardBonus_M[5];
+	g_HardBonus_M[6];
+	g_HardBonus_M[7];
+	g_HardBonus_M[8];
+	g_HardBonus_M[9];
+	g_HardBonus_M[10];
+	g_HardBonus_M[11];
+	g_HardBonus_M[12];
+	g_HardBonus_M[13];
+
+	//Hardアイテム中
+	g_HardBonus_Big[0];
+	g_HardBonus_Big[1];
+	g_HardBonus_Big[2];
+	g_HardBonus_Big[3];
+	g_HardBonus_Big[4];
+	g_HardBonus_Big[5];
+	g_HardBonus_Big[6];
+	g_HardBonus_Big[7];
+	g_HardBonus_Big[8];
+	g_HardBonus_Big[9];
+	g_HardBonus_Big[10];
 }
 
 void EasyBonusCountrol()

@@ -11,7 +11,6 @@
 
 CUSTOMVERTEX hp[4];
 
-
 void MakeVertex(CUSTOMVERTEX* cv, float w, float h)
 {
 	cv[0].x = cv[3].x = 0;

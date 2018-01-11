@@ -34,6 +34,7 @@ void ScoreRender(int GameCnt,float GameBonus)
 	int score;
 	int degit;
 
+	//‚±‚±•·‚­
 	score = (GameCnt - STARTCOUNT) / 60 * 10 + GameBonus;
 
 	for (int i = 0; i < 10; i++) 
