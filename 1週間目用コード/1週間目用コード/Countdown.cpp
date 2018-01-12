@@ -22,7 +22,6 @@ void CountDraw()
 			{ g_count.x - g_count.scale, g_count.y + g_count.scale, 1.f, 1.f, 0xFFFFFFFF, 0.f, 1.f }
 	};
 
-	/*‰‹}ˆ’u‚È‚Ì‚ÅŒã‚Å’¼‚·–*/
 	if (TimeCount < 60)
 	{
 		g_pD3Device->SetTexture(0, g_pTexture[COUNT3_TEX]);	

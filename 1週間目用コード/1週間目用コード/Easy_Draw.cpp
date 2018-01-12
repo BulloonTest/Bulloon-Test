@@ -47,7 +47,8 @@ void EasyDraw()
 	Draws(6, g_EasyBonus_Big, BONUS_BIG_TEX);
 	Draws(4, g_EasyRecovery, RECOVERY_TEX);
 	Draws(16, g_EasyHornet, HORNET_TEX);
-	Draws(16, g_EasyBird, BIRD_TEX);
+	//Draws(16, g_EasyBird, BIRD_TEX);
+	DrawsSwitch(16, g_EasyBird, BIRD_TEX, BIRD1_TEX);
 
 	DrawVertex(g_balloon, BALLOON_TEX);
 

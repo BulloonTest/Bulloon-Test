@@ -12,6 +12,7 @@ void MakeVertex(CHARCTER_STATE Obj, CUSTOMVERTEX cv[]);
 void CreateVertex(float Topx, float Topy, float Height, float Whidth, TEXTURE texture_ID);
 void DrawVertex(CHARCTER_STATE Obj, TEXTURE texture_ID);
 void Draws(int s, CHARCTER_STATE* n, TEXTURE m);
+void DrawsSwitch(int s, CHARCTER_STATE* n, TEXTURE m, TEXTURE m2);
 
 /*Å@ñ¢ê‡ñæÅ@*/
 void TexSetDraw(IDirect3DDevice9* pD3Device, LPDIRECT3DTEXTURE9 pTexture, LPCUSTOMVRTEX pVertex);

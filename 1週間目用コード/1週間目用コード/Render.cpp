@@ -4,6 +4,7 @@
 #include<d3dx9.h>
 #include"main.h"
 #include"Rotation.h"
+#include"EasyRun.h"
 
 //RenderStateの設定をここで
 void SetTexture()
@@ -149,6 +150,40 @@ void DrawVertex(CHARCTER_STATE Obj, TEXTURE texture_ID)
 	g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, cv, sizeof(CUSTOMVERTEX));
 }
 
+//画像切り替えのなんちゃってアニメーション用
+void DrawSwitching(CHARCTER_STATE Obj, TEXTURE texture_ID1,TEXTURE ID2,int Dcount)
+{
+	CUSTOMVERTEX cv[4];
+
+	cv[0].x = cv[3].x = Obj.x - Obj.scale;
+	cv[1].x = cv[2].x = Obj.x + Obj.scale;
+
+	cv[0].y = cv[1].y = Obj.y - Obj.scale;
+	cv[2].y = cv[3].y = Obj.y + Obj.scale;
+
+	for (int i = 0; i < 4; i++)
+	{
+		cv[i].z = 1.f;
+		cv[i].rhw = 1.f;
+		cv[i].color = 0xFFFFFFFF;
+	}
+
+	cv[0].tu = cv[0].tv = cv[1].tv = cv[3].tu = 0.f;
+	cv[1].tu = cv[2].tu = cv[2].tv = cv[3].tv = 1.f;
+
+	Rotation(cv, Obj.ang);
+
+	if (Dcount > 60)
+	{
+		g_pD3Device->SetTexture(0, g_pTexture[texture_ID1]);
+	}
+	else
+	{
+		g_pD3Device->SetTexture(0, g_pTexture[ID2]);
+	}
+
+	g_pD3Device->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, cv, sizeof(CUSTOMVERTEX));
+}
 
 //複数表示させる時用
 void Draws(int s, CHARCTER_STATE* n, TEXTURE m)
@@ -160,6 +195,26 @@ void Draws(int s, CHARCTER_STATE* n, TEXTURE m)
 			DrawVertex(n[i], m);
 		}
 	}
+}
+
+void DrawsSwitch(int s, CHARCTER_STATE* n, TEXTURE m, TEXTURE m2)
+{
+	static int Dcount;
+	Dcount++;
+
+	for (int i = 0; i < s; i++)
+	{
+		if (n[i].activflg == true)
+		{
+			DrawSwitching(n[i], m, m2, Dcount);
+		}
+	}
+
+	if (Dcount > 120)
+	{
+		Dcount = 0;
+	}
+
 }
 
 /*　ここは使うべき　*/

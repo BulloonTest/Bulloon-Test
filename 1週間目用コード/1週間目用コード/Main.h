@@ -34,6 +34,7 @@ enum TEXTURE
 	COUNT2_TEX,
 	COUNT1_TEX,
 	COUNTGO_TEX,
+	/*　鳥のアニメーション　*/
 	BIRD_TEX,//鳥
 	BIRD1_TEX,//鳥1
 	CUMULONIMBUS_TEX,//入道雲
